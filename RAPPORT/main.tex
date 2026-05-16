@@ -1,0 +1,95 @@
+\documentclass[a4paper,12pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[margin=2cm,includefoot]{geometry}
+\usepackage{graphicx}
+\usepackage{anyfontsize}
+\usepackage{lmodern}  
+\usepackage[most]{tcolorbox}
+\usepackage{xcolor}
+
+\renewcommand{\thesection}{\Roman{section}-}
+\renewcommand{\thesubsection}{\hspace*{0.5cm}\arabic{subsection}-}
+\renewcommand{\contentsname}{Table de matières}
+
+% Commencement
+
+\begin{document}
+
+\begin{titlepage} 
+    
+    
+    \noindent
+    \begin{minipage}[c]{0.8\textwidth}
+        {\fontfamily{phv}\selectfont\small\bfseries INSTITUT NATIONAL SUPERIEUR D'INFORMATIQUE}\\[0.1cm]
+        \textcolor{gray}{\small Filière Informatique — Rapport de Projet}
+    \end{minipage}
+    \hspace{\fill}
+    \begin{minipage}[c]{0.1\textwidth}
+    	\includegraphics[width=\linewidth,keepaspectratio]{logo.png}
+    \end{minipage}
+    
+    \vspace*{\fill}
+    
+    \begin{center}
+        
+        \rule{0.8\textwidth}{0.5pt}\\[0.2cm]
+        
+        
+        {\Huge\bfseries Détection des Messages Indésirables\par}
+        
+        \vspace{0.4cm}
+        
+        {\Large\itshape Classification automatique des spams\par}
+        
+        \vspace{0.2cm}
+        
+        \rule{0.5\textwidth}{0.5pt}\\[-0.2cm]
+        \rule{0.8\textwidth}{0.5pt}
+    \end{center}
+    
+    \vspace*{\fill}
+    
+    \noindent
+    \textbf{Présenté par :}\\
+    ANDRIAMIHAJAMANANA Anjara\\
+    N° 144/LA/25-26
+    
+    \vspace{0.25cm}
+    \begin{center}
+        \small Année Universitaire : 2025 -- 2026
+    \end{center}
+
+\end{titlepage}
+\newpage
+\begin{center}
+\tableofcontents
+\end{center}
+\vspace*{\fill}
+\newpage
+
+% Page d'introduction
+\section*{Introduction}
+\vspace*{0.2cm}
+\paragraph{Dans le monde d'aujourd'hui, la communication numérique est devenue le pilier central des échanges personnels, académiques et professionnels. Cependant, cette connectivité omniprésente s'accompagne d'une prolifération massive de messages non sollicités, communément appelés "spams". Qu'il s'agisse de publicités agressives, de tentatives d'hameçonnage (phishing) ou de la diffusion de logiciels malveillants, les spams encombrent les infrastructures réseau, saturent les espaces de stockage et représentent une menace constante pour la sécurité des données des utilisateurs.}
+
+\paragraph{Face à des volumes de données de plus en plus gigantesques, les méthodes de filtrage traditionnelles basées sur de simples listes de mots-clés sont devenues obsolètes. Les expéditeurs de spams rivalisent d'ingéniosité pour contourner les règles statiques. C'est dans ce contexte que l'apprentissage automatique s'impose comme une solution incontournable.}
+
+\paragraph{L'objectif de ce projet est de concevoir et d'implémenter un système de classification automatique capable de distinguer avec précision les messages légitimes (\textit{ham}) des messages indésirables (\textit{spam}). Pour y parvenir, notre approche repose sur une étude comparative de trois algorithmes éprouvés en traitement automatique du langage naturel (NLP) : la \textbf{Régression Logistique}, les \textbf{Support Vector Machines (SVM)}, et le modèle \textbf{Multinomial Naive Bayes}. En analysant les structures textuelles et sémantiques des données à travers ces trois prismes, ce travail vise à identifier le modèle offrant le meilleur compromis entre la vitesse d'exécution et la précision du filtrage.
+}
+
+\newpage
+\section{Analyse et préparation de données}
+\subsection{Chargement et Exploration de données}
+{la source de la donnée que nous allons utiliser provient de \textit{kaggle.com}. Cette donnée est une collection de messages SMS étiquetté
+rassemblé pour la recherche des SMS spam .Chaque message a une étiquette soit `ham`(legitime) ou `spam`(indésirable).}
+
+
+target
+ham     4516
+spam     653
+Name: count, dtype: int64
+
+\end{document}
+
