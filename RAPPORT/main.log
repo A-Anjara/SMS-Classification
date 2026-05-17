@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2025.6.20)  16 MAY 2026 12:23
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2025.6.20)  16 MAY 2026 16:56
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -744,30 +744,107 @@ LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 5
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 ) [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./logo.png>] (./main.toc)
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./logo.png>] (./main.toc
+Overfull \hbox (2.70921pt too wide) detected at line 11
+\T1/lmr/bx/n/12 III- 
+ []
+
+
+Overfull \hbox (2.09723pt too wide) detected at line 14
+\T1/lmr/bx/n/12 IV- 
+ []
+
+)
 \tf@toc=\write4
 \openout4 = `main.toc'.
 
- [1] [2] [3] (./main.aux) ) 
+ [1] [2]
+Underfull \hbox (badness 10000) in paragraph at lines 85--87
+
+ []
+
+<compte_target.png, id=60, 462.528pt x 346.896pt>
+File: compte_target.png Graphic file (type png)
+<use compte_target.png>
+Package pdftex.def Info: compte_target.png  used on input line 88.
+(pdftex.def)             Requested size: 241.84843pt x 181.38736pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 91--94
+
+ []
+
+<word_count_raw.png, id=62, 462.528pt x 346.896pt>
+File: word_count_raw.png Graphic file (type png)
+<use word_count_raw.png>
+Package pdftex.def Info: word_count_raw.png  used on input line 96.
+(pdftex.def)             Requested size: 362.77264pt x 272.09163pt.
+[3 <./compte_target.png> <./word_count_raw.png>]
+<word_count_cured.png, id=68, 462.528pt x 346.896pt>
+File: word_count_cured.png Graphic file (type png)
+<use word_count_cured.png>
+Package pdftex.def Info: word_count_cured.png  used on input line 106.
+(pdftex.def)             Requested size: 362.77264pt x 272.09163pt.
+ [4 <./word_count_cured.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 133--134
+
+ []
+
+<Regression_Logistique_confusion_matrix.png, id=73, 462.528pt x 346.896pt>
+File: Regression_Logistique_confusion_matrix.png Graphic file (type png)
+<use Regression_Logistique_confusion_matrix.png>
+Package pdftex.def Info: Regression_Logistique_confusion_matrix.png  used on in
+put line 135.
+(pdftex.def)             Requested size: 362.77264pt x 272.09163pt.
+<Multinomial_Naive_Bayes_confusion_matrix.png, id=74, 462.528pt x 346.896pt>
+File: Multinomial_Naive_Bayes_confusion_matrix.png Graphic file (type png)
+<use Multinomial_Naive_Bayes_confusion_matrix.png>
+Package pdftex.def Info: Multinomial_Naive_Bayes_confusion_matrix.png  used on 
+input line 139.
+(pdftex.def)             Requested size: 362.77264pt x 272.09163pt.
+[5 <./Regression_Logistique_confusion_matrix.png>]
+<SVM_Confusion_Matrix.png, id=79, 462.528pt x 346.896pt>
+File: SVM_Confusion_Matrix.png Graphic file (type png)
+<use SVM_Confusion_Matrix.png>
+Package pdftex.def Info: SVM_Confusion_Matrix.png  used on input line 143.
+(pdftex.def)             Requested size: 362.77264pt x 272.09163pt.
+ [6 <./Multinomial_Naive_Bayes_confusion_matrix.png> <./SVM_Confusion_Matrix.pn
+g>]
+<resultat_performance.png, id=86, 374.90062pt x 85.06781pt>
+File: resultat_performance.png Graphic file (type png)
+<use resultat_performance.png>
+Package pdftex.def Info: resultat_performance.png  used on input line 149.
+(pdftex.def)             Requested size: 362.77264pt x 82.32095pt.
+<Comparaison_model.png, id=87, 462.528pt x 346.896pt>
+File: Comparaison_model.png Graphic file (type png)
+<use Comparaison_model.png>
+Package pdftex.def Info: Comparaison_model.png  used on input line 155.
+(pdftex.def)             Requested size: 411.14528pt x 308.37653pt.
+ [7 <./resultat_performance.png (PNG copy)> <./Comparaison_model.png>]
+Overfull \hbox (4.35478pt too wide) in paragraph at lines 173--173
+ \T1/lmr/bx/n/12 L'étude com-par-a-tive a mis en lu-mière les forces de chaque 
+mod-èle selon les métriques
+ []
+
+[8] (./main.aux) ) 
 Here is how much of TeX's memory you used:
- 20629 strings out of 478051
- 445296 string characters out of 5840943
- 1855330 words of memory out of 5000000
- 40392 multiletter control sequences out of 15000+600000
+ 20686 strings out of 478051
+ 447027 string characters out of 5840943
+ 1856330 words of memory out of 5000000
+ 40441 multiletter control sequences out of 15000+600000
  570756 words of font info for 61 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  93i,6n,99p,847b,261s stack positions out of 10000i,1000n,20000p,200000b,200000s
-{/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}{/usr
-/share/texmf/fonts/enc/dvips/lm/lm-ts1.enc}{/usr/share/texlive/texmf-dist/fonts
-/enc/dvips/base/8r.enc}</usr/share/texmf/fonts/type1/public/lm/lmbx12.pfb></usr
-/share/texmf/fonts/type1/public/lm/lmbxi10.pfb></usr/share/texmf/fonts/type1/pu
-blic/lm/lmr10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr12.pfb></usr/share
-/texmf/fonts/type1/public/lm/lmri12.pfb></usr/share/texlive/texmf-dist/fonts/ty
-pe1/urw/helvetic/uhvb8a.pfb>
-Output written on main.pdf (4 pages, 193070 bytes).
+{/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}{/usr/share/te
+xmf/fonts/enc/dvips/lm/lm-ts1.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvip
+s/base/8r.enc}</usr/share/texmf/fonts/type1/public/lm/lmbx12.pfb></usr/share/te
+xmf/fonts/type1/public/lm/lmbxi10.pfb></usr/share/texmf/fonts/type1/public/lm/l
+mr10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr12.pfb></usr/share/texmf/fo
+nts/type1/public/lm/lmri12.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/h
+elvetic/uhvb8a.pfb>
+Output written on main.pdf (9 pages, 336003 bytes).
 PDF statistics:
- 94 PDF objects out of 1000 (max. 8388607)
- 48 compressed objects within 1 object stream
+ 127 PDF objects out of 1000 (max. 8388607)
+ 61 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 162 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 202 words of extra memory for PDF output out of 10000 (max. 10000000)
 

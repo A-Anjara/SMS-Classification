@@ -23,7 +23,7 @@
     \noindent
     \begin{minipage}[c]{0.8\textwidth}
         {\fontfamily{phv}\selectfont\small\bfseries INSTITUT NATIONAL SUPERIEUR D'INFORMATIQUE}\\[0.1cm]
-        \textcolor{gray}{\small Filière Informatique — Rapport de Projet}
+        \textcolor{gray}{\small Intelligence en Artificielle et Data science  — Rapport de Projet}
     \end{minipage}
     \hspace{\fill}
     \begin{minipage}[c]{0.1\textwidth}
@@ -83,13 +83,104 @@
 \section{Analyse et préparation de données}
 \subsection{Chargement et Exploration de données}
 {la source de la donnée que nous allons utiliser provient de \textit{kaggle.com}. Cette donnée est une collection de messages SMS étiquetté
-rassemblé pour la recherche des SMS spam .Chaque message a une étiquette soit `ham`(legitime) ou `spam`(indésirable).}
+rassemblé pour la recherche des SMS spam. Chaque message a une étiquette soit \textbf{ham}(legitime) ou \textbf{spam}(indésirable).}\\
+\begin{center}
+\includegraphics[width=0.5\linewidth,keepaspectratio]{compte_target.png}\\[-5pt]
+\small{figure 1.1}
+\end{center}
+Dans notre jeu de donnée , nous avons au total 5169 messages dont 4516 sont des messages legitimes et 653 d'eux sont des messages indésirables.\\
+\\
+Notre but pour cette modèle est de classifier les messages comme \textbf{ham} ou \textbf{spam} ; il est important de savoir ce qui fait de ces messages classifié ham ou spam .
+
+\begin{center}
+\includegraphics[width=0.75\linewidth,keepaspectratio]{word_count_raw.png}\\[-5pt]
+\small{figure 1.2}
+\end{center}
+
+\vspace*{\fill}
+\newpage
+La \textit{figure 1.2} affiche les mots les plus fréquents dans le jeu de donnée. On remarque tout de suite que les mots les plus fréquents sont des mots comme 'i' , 'you' , 'to' , 'and' , ... Or , ces mots n'aident même pas dans la classification des messages. Ainsi , ces mots ne sont alors que des bruits dans notre jeu de donnée ; ils sont considérés comme des \textbf{mots vides}.
+\subsection{Nettoyage de donnée}
+On doit alors supprimer de notre jeu de donnée ces \textbf{mots vides}.
+\begin{center}
+\includegraphics[width=0.75\linewidth,keepaspectratio]{word_count_cured.png}\\[-5pt]
+\small{figure 1.3}
+\end{center}
+Même si le jeu de donnée est moins bruyants , on peut encore soigner notre jeu de donnée grâce à une technique appelée \textbf{lemmatisation}. La lemmatisation consiste à reduire les mots dans les messages à son mot correspondant dans le dictionnnaire.\\
+Après la lemmatisation , les messages sont biens soignée et procèdent à leur transformation numérique, cette étape s'appelle le \textbf{feature engineering}.
+\subsection{Feature Engineering}
+Pour transformer les messages dans le jeu de donnée , on utilise la methode de \textbf{TF-IDF}. TF-IDF est l'abbréviation de \textit{Term Frequency} et \textit{Inverse Document Frequency}. Une methode qui numérise les messages tout en considérant leur signification sémantique.\\
+Pour être plus technique , on combine \textbf{word-level TF-IDF avec ngram de (1,2)} et \textbf{char-level TF-IDF avec ngram de (3,5)}
+\begin{itemize}
+	\item{\textbf{word-level TF-IDF avec ngram de (1,2)} : Une methode en prenant tous les mots et les mots deux à deux proche avant d'appliquer la TF-IDF }
+	\item{\textbf{char-level TF-IDF avec ngram de (3,5)} : Une methode en prenant tous les lettres de longueur 3 à 5 pour chaque mots avant d'appliquer la TF-IDF }
+\end{itemize}
+Avec cette methode , on peut facilement capturer les messages indésirables avancés comme \textbf{mon3y} ou \textbf{w!n f r 3 e mon3y} ou \textbf{cl1ck here !}
+\vspace*{\fill}
+\newpage
+\section{Conception et Entraînement des Modèles}
+\subsection{Division du jeu de donnée}
+Après le \textbf{feature engineering}, notre jeu de donnée est maintenant numérique et prêt à être entraîner dans des modèles. Mais avant cela, séparons notre jeu de donnée en \textbf{donnée d'entrainement} et \textbf{donnée de test}. La raison pour la séparation de donnée est l'évaluation du modèle après son entraînement. Si on ne sépare pas le jeu de donnée , on aurait aucune moyen pour savoir si notre modèle est mauvais ou bien.
+\subsection{Modélisation et Entraînement}
+On est maintenant sur la creation et entraînement du model. Les modèles qui vont être utilisés pour notre jeu de donnée sont :
+\begin{itemize}
+	\item{\textbf{SVM}}
+	\item{\textbf{Multinomial Naive Bayes}}
+	\item{\textbf{Logistic Regression}}
+\end{itemize}
+\section{ Évaluation et Analyse des Résultats}
+\subsection{Resultats des performances}
+Après l'entraînement des trois modèles, nous avons leurs resultats métriques.\\
+\begin{center}
+\includegraphics[width=0.75\linewidth,keepaspectratio]{Regression_Logistique_confusion_matrix.png}\\[-5pt]
+\small{figure 1.4}
+\end{center}
+\begin{center}
+\includegraphics[width=0.75\linewidth,keepaspectratio]{Multinomial_Naive_Bayes_confusion_matrix.png}\\[-5pt]
+\small{figure 1.5}
+\end{center}
+\begin{center}
+\includegraphics[width=0.75\linewidth,keepaspectratio]{SVM_Confusion_Matrix.png}\\[-5pt]
+\small{figure 1.6}
+\end{center}
+\newpage
+La \textbf{figure 1.7} affiche les métriques des trois modèles en pourcentage.
+\begin{center}
+\includegraphics[width=0.75\linewidth,keepaspectratio]{resultat_performance.png}\\[-5pt]
+\small{figure 1.7}
+\end{center}
+\subsection{Comparaison des Modèles}
+À partir de ces performances, créons un graphe plus intuitive avec leur \textit{accuracy} , \textit{precision} , \textit{recall} et \textit{f1-score}
+\begin{center}
+\includegraphics[width=0.85\linewidth,keepaspectratio]{Comparaison_model.png}\\[-5pt]
+\small{figure 1.6}
+\end{center}
+
+On choisit le modèle qui convient mieux par rapport au contexte.
+\begin{itemize}
+\item{Si on veut minimiser le nombre de spam , on utilise \textbf{Multinomial Nayve Bayes} car il est le modèle avec le plus de \textbf{recall} (90,91 \%)}
+\item{Si les messages non-spam sont importants mais les messages spam sont toujours à minimiser, on utilise \textbf{SVM} car il est le modèle avec le plus de \textbf{precision}(97,83 \%) et \textbf{accuracy}(97,87 \%)}
+\item{Si on veut privilégier la rapidité de notre modèle, on utilise \textbf{Regression Logistique}}
+\end{itemize}
+
+\section{Conclusion}
+\paragraph{
+En conclusion, ce projet nous a permis de concevoir et de comparer rigoureusement trois approches d'apprentissage automatique pour la classification des messages indésirables.}
+\paragraph{L'implémentation de la chaîne de traitement textuel, combinée à la méthode de vectorisation \textbf{TF-IDF} (Term Frequency-Inverse Document Frequency), s'est avérée essentielle pour transformer efficacement les données textuelles brutes en caractéristiques numériques exploitables par nos algorithmes.
+}
+
+\paragraph{L'étude comparative a mis en lumière les forces de chaque modèle selon les métriques d'évaluation retenues :}
+\begin{itemize}
+    \item La \textbf{Régression Logistique} s'est imposée comme une excellente solution de référence , offrant une très bonne exactitude globale et une vitesse de calcul remarquable.
+    \item Le modèle \textbf{Multinomial Naive Bayes} a confirmé sa réputation historique en classification textuelle en affichant un excellent compromis global et un score de \textit{Rappel} élevé, idéal pour intercepter un maximum de spams.
+    \item Les \textbf{SVM} se sont distinguées par leur régularité et leur haute \textit{Précision}, une qualité critique pour un filtre de messagerie afin de minimiser le taux de faux positifs et d'éviter la perte de messages légitimes importants.
+\end{itemize}
+
+\paragraph{
+Bien que les performances obtenues soient hautement satisfaisantes pour un déploiement standard, plusieurs perspectives d'amélioration peuvent être envisagées. À court terme, l'ajustement plus fin des hyperparamètres avec \textit{GridSearch}. À plus long terme, l'exploration de modèles de Deep Learning ou de techniques basées sur des transformeurs tels que BERT permettrait de capturer le contexte sémantique profond des messages et de mieux contrer les stratégies d'évasion des expéditeurs de spams.
+}
 
 
-target
-ham     4516
-spam     653
-Name: count, dtype: int64
 
 \end{document}
 
