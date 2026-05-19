@@ -5,7 +5,7 @@ const props = defineProps(["email"])
 const answer = ref("");
 const text = ref("");
 function verifier(){
-    fetch('http://localhost:3000/api/verifier', {
+    fetch('https://sms-classification-server.onrender.com/api/verifier', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ 'message':text.value,'email':props.email })
@@ -26,7 +26,7 @@ const list = ref([]);
 function fetchList(){
   if(props.email.length>0){
       
-      fetch('http://localhost:3000/api/list', {
+      fetch('https://sms-classification-server.onrender.com/api/list', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ 'email': props.email})

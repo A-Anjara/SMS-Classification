@@ -10,7 +10,7 @@ function submit(){
   if(email.value.length>0 && password.value.length>0 && repassword.value.length>0 && password.value == repassword.value){
     
     
-    fetch('http://localhost:3000/api/signin', {
+    fetch('https://sms-classification-server.onrender.com/api/signin', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ 'email': email.value,'password':password.value })

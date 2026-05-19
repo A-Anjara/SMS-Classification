@@ -7,7 +7,7 @@ const password = ref("");
 const hasError = ref(false);
 function submit(){
   if(email.value.length>0 && password.value.length>0){
-    fetch('http://localhost:3000/api/login', {
+    fetch('https://sms-classification-server.onrender.com/api/login', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ 'email': email.value,'password':password.value })
